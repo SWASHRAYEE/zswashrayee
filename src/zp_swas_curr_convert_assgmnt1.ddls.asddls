@@ -35,6 +35,5 @@ as select from yi_swas_travel as Travel
                           error_handling => 'SET_TO_NULL' 
  //                         client => $session.client   // optional
                            ) as ConvertedPrice,
-       $parameters.p_TargetCurr as TargetCurrency                
-    
+       $parameters.p_TargetCurr as TargetCurrency                   
 }
