@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service creation on Booking view'
+@ObjectModel.leadingEntity.name: 'YC_Swas_Travel'
+define service Yswas_booking_srv {
+  expose yc_swas_booking as booking;
+  expose yc_swas_travel  as travel;
+}

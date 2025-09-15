@@ -7,9 +7,12 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define view entity yi_swas_booking as select from yswas_booking
-
-{   key booking_uuid          as BookingUuid,
+define view entity yi_swas_booking 
+as select from yswas_booking
+  association [1..1] to yi_swas_travel as _Travel 
+  on $projection.TravelUuid = _Travel.TravelUuid
+{
+  key booking_uuid          as BookingUuid,
       travel_uuid           as TravelUuid,
       booking_id            as BookingId,
       booking_date          as BookingDate,
@@ -22,6 +25,8 @@ define view entity yi_swas_booking as select from yswas_booking
       currency_code         as CurrencyCode,
       created_by            as CreatedBy,
       last_changed_by       as LastChangedBy,
-      local_last_changed_at as LocalLastChangedAt
-    
+      local_last_changed_at as LocalLastChangedAt,
+      _Travel
 }
+
+
