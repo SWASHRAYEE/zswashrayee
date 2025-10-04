@@ -1,0 +1,64 @@
+@Metadata.layer: #CORE 
+@UI.headerInfo: {
+    typeName: 'Travel',
+    typeNamePlural: 'TravelDashboard',
+    title: {
+        type: #STANDARD,
+        label: 'Travel_Detail',
+        value: 'TravelId'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Description',
+        value: 'Description'
+    }
+}
+annotate entity yc_swas_travel
+    with 
+{
+ @UI: { lineItem: [{ position: 10 }] ,
+                 selectionField: [{ position: 10 }],
+                 identification: [{ position: 10 }] } // for FIORI exposure annotation
+
+    TravelId;
+    @UI: { lineItem: [{ position: 20 }] ,
+                 selectionField: [{ position: 20 }],
+                 identification: [{ position: 20 }] } // for FIORI exposure annotation
+    AgencyId;
+     @UI: { lineItem: [{ position: 21 }] ,
+                 selectionField: [{ position: 21 }],
+                 identification: [{ position: 21 }] } // for FIORI exposure annotation
+//    AgencyName;
+//    @UI: { lineItem: [{ position: 30 }] ,
+//                 selectionField: [{ position: 30 }],
+//                 identification: [{ position: 30 }],
+//                 textArrangement: #TEXT_ONLY } // for FIORI exposure annotation
+    CustomerId;
+    @UI: { lineItem: [{ position: 40 }] ,
+           selectionField: [{ position: 40 }] }// for FIORI exposure annotation
+      BeginDate;
+      @UI: { lineItem: [{ position: 50 }] }
+      EndDate;
+       @UI: { lineItem: [{ position: 60 }] }
+      BookingFee;
+       @UI: { lineItem: [{ position: 70 }] }
+      TotalPrice;
+       @UI: { lineItem: [{ position: 80 }] }
+      CurrencyCode;
+       @UI: { lineItem: [{ position: 90 }] }
+      Description;
+       @UI: { lineItem: [{ position: 100 }] }
+      OverallStatus;
+       @UI: { lineItem: [{ position: 110 }] }
+      CreatedBy;
+       @UI: { lineItem: [{ position: 120 }] }
+      CreatedAt;
+       @UI: { lineItem: [{ position: 130 }] }
+      LastChangedBy;
+     @UI.hidden: true
+       LastChangedAt;
+     @UI.hidden: true
+      LocalLastChangedAt;
+//     _Booking;
+      
+    }

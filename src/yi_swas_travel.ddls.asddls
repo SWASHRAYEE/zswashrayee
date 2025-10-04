@@ -9,8 +9,10 @@
 }
 define view entity yi_swas_travel 
   as select from yswas_travel
-  association[1..*] to yi_swas_booking as _booking
-  on $projection.TravelUuid = _booking.TravelUuid
+  association[1..*] to yi_swas_booking as _booking on $projection.TravelUuid = _booking.TravelUuid
+  association [0..1] to /DMO/I_Agency  as _Agency  on $projection.AgencyId = _Agency.AgencyID
+  association [0..1] to /DMO/I_Customer  as _Customer on $projection.CustomerId = _Customer.CustomerID
+  
 {   key travel_uuid as TravelUuid,
     travel_id as TravelId,
     agency_id as AgencyId,
@@ -29,7 +31,9 @@ define view entity yi_swas_travel
     last_changed_by as LastChangedBy,
     last_changed_at as LastChangedAt,
     local_last_changed_at as LocalLastChangedAt,
-    _booking  // exposed association
+    _booking , // exposed association
+    _Agency , // exposed association
+    _Customer // exposed association
   // _booking.BookingId // Adhoc Associationpath expression & it will change the cardinality stated above
  //   _booking[*:inner].BookingId // convert the association into inner join 
                                 // & it will change the cardinality stated above

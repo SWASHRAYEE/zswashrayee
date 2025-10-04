@@ -3,6 +3,8 @@
 {
 "FROM":
 [
+"/DMO/I_AGENCY",
+"/DMO/I_CUSTOMER",
 "YI_SWAS_TRAVEL"
 ],
 "ASSOCIATED":
