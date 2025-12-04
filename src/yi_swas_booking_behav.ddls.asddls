@@ -7,9 +7,9 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define view entity yi_swas_booking 
-as select from yswas_booking
-  association [1..1] to yi_swas_travel as _Travel 
+define view entity YI_SWAS_BOOKING_behav 
+  as select from yswas_booking
+  association to parent YI_SWAS_TRAVEL_behav as _Travel 
   on $projection.TravelUuid = _Travel.TravelUuid
 {
   key booking_uuid          as BookingUuid,
