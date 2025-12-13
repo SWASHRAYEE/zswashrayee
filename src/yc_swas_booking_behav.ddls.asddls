@@ -15,20 +15,20 @@ define view entity YC_SWAS_BOOKING_behav
  // on $projection.TravelUuid = _Travel.TravelUuid
 {
   key YI_SWAS_BOOKING_behav.BookingUuid,
-      yi_swas_booking_behav.TravelUuid,
-      yi_swas_booking_behav.BookingId,
-      yi_swas_booking_behav.BookingDate,
-      yi_swas_booking_behav.CustomerId,
-      yi_swas_booking_behav.CarrierId,
-      yi_swas_booking_behav.ConnectionId,
-      yi_swas_booking_behav.FlightDate,
+      YI_SWAS_BOOKING_behav.TravelUuid,
+      YI_SWAS_BOOKING_behav.BookingId,
+      YI_SWAS_BOOKING_behav.BookingDate,
+      YI_SWAS_BOOKING_behav.CustomerId,
+      YI_SWAS_BOOKING_behav.CarrierId,
+      YI_SWAS_BOOKING_behav.ConnectionId,
+      YI_SWAS_BOOKING_behav.FlightDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
-      yi_swas_booking_behav.FlightPrice,
-      yi_swas_booking_behav.CurrencyCode,
-      yi_swas_booking_behav.CreatedBy,
-      yi_swas_booking_behav.LastChangedBy,
-      yi_swas_booking_behav.LocalLastChangedAt,
+      YI_SWAS_BOOKING_behav.FlightPrice,
+      YI_SWAS_BOOKING_behav.CurrencyCode,
+      YI_SWAS_BOOKING_behav.CreatedBy,
+      YI_SWAS_BOOKING_behav.LastChangedBy,
+      YI_SWAS_BOOKING_behav.LocalLastChangedAt,
       /* Associations */
-      _Travel : redirected to parent yc_swas_travel_behav  // projection view
+      _Travel : redirected to parent YC_SWAS_TRAVEL_behav  // projection view
 }
 

@@ -1,6 +1,6 @@
 @EndUserText.label: 'Travel entity service'
 @ObjectModel.leadingEntity.name: 'YC_SWAS_Travel'
 define service YSWAS_travel_serv {
-  expose yc_swas_travel  as Travel;
-  expose yc_swas_booking as booking;
+  expose YC_SWAS_TRAVEL_behav  as Travel;
+  expose YC_SWAS_BOOKING_behav as booking;
 }

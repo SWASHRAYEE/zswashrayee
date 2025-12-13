@@ -1,0 +1,27 @@
+projection;
+strict ( 2 );
+use collaborative draft;
+
+define behavior for YC_SWAS_TRAVEL_behav alias Travel
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Discard;
+  use action Activate;
+  use action Resume;
+  use action Share;
+  use action Prepare;
+
+  use association _Booking { create; with draft; }
+}
+
+define behavior for YC_SWAS_BOOKING_behav alias booking
+{
+  use update;
+  use delete;
+
+  use association _Travel { with draft; }
+}
