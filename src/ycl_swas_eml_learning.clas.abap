@@ -24,7 +24,7 @@ CLASS ycl_swas_eml_learning IMPLEMENTATION.
 * Fetch key UUID from TRAVE
     SELECT FROM YC_SWAS_TRAVEL_behav
       FIELDS traveluuid
-      WHERE TravelId IN ( '00000025' , '34' )
+      WHERE TravelId IN ( '00000025' , '00000034' )
       INTO TABLE @DATA(lt_key_truuid).
 
     IF lt_key_truuid IS INITIAL.
@@ -39,7 +39,9 @@ CLASS ycl_swas_eml_learning IMPLEMENTATION.
     ENTITY Travel
     FIELDS ( TravelId  AgencyId ) "to show all flds use ALL FIELDS
      WITH  Travel_Read_Import  "VALUE #( ( TravelUuid = '0075BB3252506C9519007CEE18EE2C04' ) )
-    RESULT lt_travel_result.
+    RESULT lt_travel_result
+    FAILED DATA(lt_travel_fail)
+    REPORTED DATA(lt_travel_report).
 
 * Assignment 2 (read booking entries only)
 * Read fields of Booking entity-
@@ -72,6 +74,10 @@ CLASS ycl_swas_eml_learning IMPLEMENTATION.
     "   FROM ls_travel_input
     "  RESULT lt_travel_result.
 
-    " out->write( lt_travel_result ).
+    out->write( lt_travel_result ).
+    out->write( lt_booking_result ).
+    out->write( lt_booking_result_combine ).
+    out->write( lt_travel_fail ).
+    out->write( lt_travel_report ).
   ENDMETHOD.
 ENDCLASS.
