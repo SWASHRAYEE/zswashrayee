@@ -1,0 +1,10 @@
+CLASS zbp_i_swas_travel_behav DEFINITION
+  PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF YI_swas_Travel_behav
+  CREATE PUBLIC .
+
+ENDCLASS.
+
+
+
+CLASS zbp_i_swas_travel_behav IMPLEMENTATION.
+ENDCLASS.
