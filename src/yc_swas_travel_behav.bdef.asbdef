@@ -1,5 +1,5 @@
 projection;
-strict ( 2 );
+strict ( 2 ); // " ensuring we adhere the latest practice
 use collaborative draft;
 
 define behavior for YC_SWAS_TRAVEL_behav alias Travel
