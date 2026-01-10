@@ -27,7 +27,19 @@ etag master LocalLastChangedAt
   association _Booking { create; with draft; }
   mapping for yswas_travel corresponding  // mapping between TRAVEL and BOOKING entity
   { AgencyId = agency_id ;
-    BeginDate = begin_date ;}
+    BeginDate = begin_date ;
+    BookingFee = booking_fee;
+    CreatedAt = created_at;
+    CreatedBy = created_by;
+    CurrencyCode = currency_code;
+    CustomerId = customer_id;
+    Description = description;
+    EndDate = end_date;
+    LastChangedAt = last_changed_at;
+    LastChangedBy = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    TravelUuid         = travel_uuid;
+    }
 }
 
 define behavior for YI_SWAS_BOOKING_behav alias Booking

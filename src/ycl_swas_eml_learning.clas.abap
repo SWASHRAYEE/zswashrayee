@@ -21,6 +21,22 @@ CLASS ycl_swas_eml_learning IMPLEMENTATION.
            Travel_Read_Import  TYPE TABLE FOR READ IMPORT YI_swas_Travel_behav,
            Booking_Read_Import TYPE TABLE FOR READ IMPORT YI_SWAS_BOOKING_behav.
 
+    DATA : travel_create_import TYPE TABLE FOR CREATE YI_swas_Travel_behav\\travel. " Press F2 will give u element list
+
+        travel_create_import = VALUE #( %cid = 'swashrayee_1' " forming internal structure ie derived structure
+                                        %is_draft = if_abap_behv=>mk-on  " indicator of draft enabling
+                                     (  %data = VALUE #(
+                                          TravelId = '6945'
+                                          AgencyId = '1214'
+                                          CustomerId = '34566'
+                                          Description = TEXT-001 ) ) ).
+* Create entity based on internal derived structure
+        MODIFY ENTITIES OF YI_swas_Travel_behav
+        ENTITY travel
+        CREATE FIELDS  ( TravelId AgencyId CustomerId Description )
+        WITH travel_create_import.
+
+
 * Fetch key UUID from TRAVEL entity
     SELECT FROM YC_SWAS_TRAVEL_behav
       FIELDS  DISTINCT TravelId ,TravelUuid , BeginDate , TotalPrice

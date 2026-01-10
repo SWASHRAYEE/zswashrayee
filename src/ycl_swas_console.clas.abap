@@ -19,6 +19,8 @@ CLASS ycl_swas_console IMPLEMENTATION.
     " delete existing entries in the database table
     DELETE FROM yswas_travel.
     DELETE FROM yswas_booking.
+    DELETE FROM yswas_travel_d.
+    DELETE FROM yswas_booking_d.
 
     " insert travel demo data
     INSERT yswas_travel FROM (
@@ -53,7 +55,7 @@ CLASS ycl_swas_console IMPLEMENTATION.
     INSERT yswas_booking FROM (
         SELECT
           FROM   /dmo/booking    AS booking
-            JOIN ymainak_travel AS z
+            JOIN yswas_travel AS z
             ON   booking~travel_id = z~travel_id
           FIELDS
             uuid( )                 AS booking_uuid          ,
@@ -111,7 +113,7 @@ CLASS ycl_swas_console IMPLEMENTATION.
     INSERT zswas_booking FROM (
         SELECT
           FROM   /dmo/booking    AS booking
-            JOIN ymainak_travel AS z
+            JOIN yswas_travel AS z
             ON   booking~travel_id = z~travel_id
           FIELDS
             uuid( )                 AS booking_uuid          ,
