@@ -15,6 +15,9 @@ define behavior for YC_SWAS_TRAVEL_behav alias Travel
   use action Share;
   use action Prepare;
 
+
+
+
   use association _Booking { create; with draft; }
 }
 

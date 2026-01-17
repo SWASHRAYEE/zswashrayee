@@ -12,6 +12,8 @@ CLASS ycl_swas_eml_assignmnt DEFINITION
     METHODS copy_travel_draft IMPORTING travel_id      TYPE YI_swas_Travel_behav-TravelId
                               EXPORTING travel_result  TYPE ty_travel__read_result_tt
                                         booking_result TYPE ty_travel__read_result_tt.
+
+
 ENDCLASS.
 
 CLASS ycl_swas_eml_assignmnt IMPLEMENTATION.

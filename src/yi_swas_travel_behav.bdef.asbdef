@@ -23,6 +23,9 @@ etag master LocalLastChangedAt
   draft action Share;
   draft determine action Prepare;
 
+
+  determination determineTravelID on save {create;}  // SAVE - triggerring time CREATE -> action
+
   field ( numbering : managed , readonly ) TravelUuid;
   association _Booking { create; with draft; }
   mapping for yswas_travel corresponding  // mapping between TRAVEL and BOOKING entity

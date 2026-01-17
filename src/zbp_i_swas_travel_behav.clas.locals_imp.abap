@@ -8,6 +8,9 @@ CLASS lhc_YI_swas_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
 
     METHODS get_global_authorizations FOR GLOBAL AUTHORIZATION
       IMPORTING REQUEST requested_authorizations FOR YI_swas_travel_behav RESULT result.
+
+    METHODS determineTravelID FOR DETERMINE ON SAVE
+                              importing keys for travel~determineTravelID.
 ENDCLASS.
 
 
@@ -23,4 +26,8 @@ CLASS lhc_YI_swas_travel IMPLEMENTATION.
     result-%delete = if_abap_behv=>auth-allowed.
     result-%update = if_abap_behv=>auth-allowed.
   ENDMETHOD.
+
+  METHOD determinetravelid .
+
+  ENDMETHOD..
 ENDCLASS.
