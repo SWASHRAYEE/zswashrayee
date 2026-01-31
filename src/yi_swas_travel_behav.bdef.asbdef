@@ -25,8 +25,11 @@ etag master LocalLastChangedAt
 
 
   determination determineTravelID on save {create;}  // SAVE - triggerring time CREATE -> action
+  validation checkCustomerID on save {field CustomerId;} // CNTRL + F1 for quick asssist
+
 
   field ( numbering : managed , readonly ) TravelUuid;
+  field (readonly) TravelId;
   association _Booking { create; with draft; }
   mapping for yswas_travel corresponding  // mapping between TRAVEL and BOOKING entity
   { AgencyId = agency_id ;
