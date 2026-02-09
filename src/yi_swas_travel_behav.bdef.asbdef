@@ -1,4 +1,4 @@
-managed implementation in class zbp_i_swas_travel_behav unique;
+ managed implementation in class zbp_i_swas_travel_behav unique;
 strict ( 2 ); // " ensuring we adhere the latest practice
 with collaborative draft;// explicitly added
 
@@ -27,9 +27,11 @@ etag master LocalLastChangedAt
   determination determineTravelID on save {create;}  // SAVE - triggerring time CREATE -> action
   validation checkCustomerID on save {field CustomerId;} // CNTRL + F1 for quick asssist
 
-
+// Internal Business Logic
   field ( numbering : managed , readonly ) TravelUuid;
   field (readonly) TravelId;
+  field (mandatory) CustomerId;
+
   association _Booking { create; with draft; }
   mapping for yswas_travel corresponding  // mapping between TRAVEL and BOOKING entity
   { AgencyId = agency_id ;
